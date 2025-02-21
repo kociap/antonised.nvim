@@ -3,6 +3,7 @@ local colors = require("antonised.colors")
 -- stylua: ignore start
 return {
   ["Normal"] =      { fg = colors.text, bg = colors.surface },
+  ["Bold"] =        { bold = true },
   ["Visual"] =      { bg = colors.grey6 },
   ["NonText"] =     { fg = colors.grey3 },
 
@@ -13,6 +14,11 @@ return {
   ["ColorColumn"] =  { bg = colors.grey5, cterm = { reverse = true } },
   ["CursorColumn"] = { bg = colors.grey5 },
   ["CursorLine"] =   { bg = colors.grey5 },
+
+  ["Search"] =      { fg = colors.black, bg = colors.yellow },
+  ["IncSearch"] =   { link = "Search" },
+  ["Substitute"] =  { link = "Search" },
+  ["CurSearch"] =   { link = "Search" },
 
   ["Directory"] =   { fg = colors.text },
   ["Title"] =       { fg = colors.text, bold = true },
@@ -160,6 +166,18 @@ return {
   ["@lsp.type.unresolvedReference"] = { sp = colors.warning, undercurl = true },
 
   -- PLUGINS
+
+  -- Lazy
+  ["LazyButton"] =       { bg = colors.grey7 },
+  ["LazyButtonActive"] = { bg = colors.grey5, bold = true },
+  ["LazyH1"] =           { link = "LazyButtonActive"},
+  ["LazyH2"] =           { link = "Bold" },
+  ["LazyReasonStart"] =  { fg = colors.blue },
+  ["LazyReasonImport"] = { fg = colors.purple },
+  ["LazyReasonRequire"] = { fg = colors.purple },
+  ["LazyReasonSource"] = { fg = colors.yellow },
+  ["LazyReasonFt"] =     { fg = colors.yellow },
+  ["LazyReasonEvent"] =  { fg = colors.green },
 
   -- Telescope
   ["TelescopeNormal"] = { bg = colors.float_surface },
